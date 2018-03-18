@@ -65,3 +65,12 @@ deployedContract = VotingContract.new(
 contractInstance = VotingContract.at(deployedContract.address)
 abi = compiledCode.contracts['VirtLotto.sol:VirtLotto'].interface
 ```
+
+## mov convertion
+```
+# to mp3
+ffmpeg -i Coderschool_week01_assigment_VirtLotto.mov -vcodec copy -acodec copy Coderschool_week01_assigment_VirtLotto.mp4
+
+# to gif
+ffmpeg -i Coderschool_week01_assigment_VirtLotto.mov -s 2880X1800 -pix_fmt rgb24 -r 25 -f gif - | gifsicle --optimize=3 --delay=3 > Coderschool_week01_assigment_VirtLotto.gif
+```
