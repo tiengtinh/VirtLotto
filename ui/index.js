@@ -15,11 +15,15 @@ VotingContract = web3.eth.contract(abi);
 
 // local usingOraclize
 // gas used: 3381460
-contractInstance = VotingContract.at('0xf12b5dd4ead5f743c6baa640b0216200e89b60da');
+// contractInstance = VotingContract.at('0xf12b5dd4ead5f743c6baa640b0216200e89b60da');
 
 // local pure
 // gas used: 1094947
-// contractInstance = VotingContract.at('0x8cdaf0cd259887258bc13a92c0a6da92698644c0');
+contractInstance = VotingContract.at('0x345ca3e014aaf5dca488057592ee47305d9b3e10');
+
+// ropsten pure
+// gas used: 1094947
+// contractInstance = VotingContract.at('0x6e8fbd5f0ae68dfe8fa986a2ff2e711ccec6341b');
 
 
 function contractGetCall(method, args = []) {
