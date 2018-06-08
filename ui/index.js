@@ -7,7 +7,7 @@ if (typeof web3 !== 'undefined') {
 } else {
   console.log('No web3? You should consider trying MetaMask!')
   // fallback - use your fallback strategy (local node / hosted node + in-dapp id mgmt / fail)
-  web3js = new Web3(new Web3.providers.HttpProvider("http://localhost:7545"));
+  web3js = new Web3(new Web3.providers.HttpProvider("http://localhost:9545"));
 }
 
 abi = JSON.parse('[{"constant":true,"inputs":[],"name":"MAX_TICKETS_PER_ADDRESS","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"roundCount","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"number","type":"uint256"}],"name":"pickNumber","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":false,"inputs":[{"name":"myid","type":"bytes32"},{"name":"result","type":"string"}],"name":"__callback","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_queryId","type":"bytes32"},{"name":"_result","type":"string"},{"name":"_proof","type":"bytes"}],"name":"__callback","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[],"name":"kill","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"},{"name":"","type":"uint256"}],"name":"playerTickets","outputs":[{"name":"number","type":"uint256"},{"name":"amount","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"betsPerRound","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"player","type":"address"}],"name":"getPlayerTicketsCount","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"owner","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"minBet","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"betCount","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"MIN_NUMBER","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"players","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"MAX_NUMBER","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[{"name":"_minBet","type":"uint256"},{"name":"_betsPerRound","type":"uint256"}],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":false,"name":"player","type":"address"},{"indexed":false,"name":"number","type":"uint256"},{"indexed":false,"name":"amount","type":"uint256"}],"name":"NumberPicked","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"winners","type":"address[]"},{"indexed":false,"name":"luckyNumber","type":"uint256"},{"indexed":false,"name":"prize","type":"uint256"}],"name":"RoundConcluded","type":"event"}]')
@@ -19,11 +19,11 @@ VotingContract = web3.eth.contract(abi);
 
 // local pure
 // gas used: 1094947
-contractInstance = VotingContract.at('0x345ca3e014aaf5dca488057592ee47305d9b3e10');
+// contractInstance = VotingContract.at('0xf12b5dd4ead5f743c6baa640b0216200e89b60da');
 
 // ropsten pure
 // gas used: 1094947
-// contractInstance = VotingContract.at('0x6e8fbd5f0ae68dfe8fa986a2ff2e711ccec6341b');
+contractInstance = VotingContract.at('0x6e8fbd5f0ae68dfe8fa986a2ff2e711ccec6341b');
 
 
 function contractGetCall(method, args = []) {
